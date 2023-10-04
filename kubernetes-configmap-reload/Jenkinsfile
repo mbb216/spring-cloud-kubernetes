@@ -42,7 +42,7 @@ pipeline {
 			}
 	        steps {
 	            dir("${params.AppName}") {
-	                docker build ( "${params.ImageName}", "${params.docker_repo}" )
+	                dockerBuild ( "${params.ImageName}", "${params.docker_repo}" )
 	            }
 	        }
 	    }
