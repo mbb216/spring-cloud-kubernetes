@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: kubernetes-configmap
+  name: kubernetes-configmap-reload
 spec:
   type: LoadBalancer
   selector:
-    app: kubernetes-configmap
+    app: kubernetes-configmap-reload
   ports:
     - name: http
       protocol: TCP
@@ -15,17 +15,17 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubernetes-configmap
+  name: kubernetes-configmap-reload
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: kubernetes-configmap
+      app: kubernetes-configmap-reload
   template:
     metadata:
       labels:
-        app: kubernetes-configmap
+        app: kubernetes-configmap-reload
     spec:
       containers:
-        - name: kubernetes-configmap
-          image: mbb216/kubernetes-configmap:latest
+        - name: kubernetes-configmap-reload
+          image: mbb216/kubernetes-configmap-reload:latest
