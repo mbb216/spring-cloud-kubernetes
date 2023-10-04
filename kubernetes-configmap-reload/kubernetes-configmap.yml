@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: kubernetes-configmap-reload
-          image: mbb216/kubernetes-configmap-reload:latest
+          image: mbb216/spring-cloud-kubernetes/kubernetes-configmap-reload:latest
